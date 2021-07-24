@@ -2,7 +2,7 @@
 
 
 // opml file with links
-var linklibrary = ['https://genboy.net/info/feedboard/library.opml', 
+var linklibrary = ['https://webdesigndenhaag.net/lab/feedboard/library.opml', 
 				   //'https://raw.githubusercontent.com/marklogic-community/feed/master/test-scripts/data/opml_google-reader.opml',
 				   //'http://webdesigndenhaag.net/project/feedboard/construct.opml',
 				   //http://webdesigndenhaag.net/lab/wp-links-opml.php'
@@ -612,12 +612,20 @@ function displaySettings(){
     var dsp = document.createElement('div');
     dsp.setAttribute('id', 'sourcebox');
 	var inp = document.createElement('input');
-	inp.setAttribute('id', 'sourcesting');
-	inp.setAttribute('name', 'sourcesting');
+	inp.setAttribute('id', 'sourcestring');
+	inp.setAttribute('name', 'sourcestring');
 	inp.setAttribute('type', 'text');
-	inp.setAttribute('onchange', 'sourceinput(this.value);');
+	//inp.addEventListener('onchange', sourceinput(this.value) );
+    inp.addEventListener("keydown", function (e) {
+        if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+            sourceinput(this.value); //validate(e);
+        }
+    });
+    
     dsp.appendChild(inp);
     document.getElementById("optionbar").appendChild(dsp);
+    
+    
 	
     var dsp = document.createElement('span');
     dsp.setAttribute('id', 'selectboxfeedmax');
@@ -773,22 +781,79 @@ function sourceinput(str){
 			
 		}else{
 			
-			validateOpmlUrl(str,function(valid){
-				if(valid['chk'] == 1){
-					// opml
-					console.log('Adopting opml '+ str);
-					
-				}else{
-					
-					validateFeedUrl(str,function(valid){
+                        validateFeedUrl(str,function(valid){
+                            
 						if(valid['chk'] == 1){
 							// rss feed 
 							console.log('Adopting RSS '+ str);
-						}
+                            //addUrlToBundle(str,'new');
+                            //filterbundle.push(str);
+                            var group = 'custom';
+                             var importing = importFeedChannel( str, group, function(newchannel){
+
+                            if(newchannel['items']){
+
+                                for(var c = newchannel['items'].length; c--;){
+                                    // add channel info (website url from opml list, not from rss)
+                                    //newchannel['items'][c]['website'] = channel['website'];
+                                    //newchannel['items'][c]['group'] = group;
+                                    //newchannel['items'][c]['feedtitle'] = channel['title'];
+                                }
+                                for(var i = archive.length; i--;){
+                                    if (archive[i]['feedurl'] === str && archive[i]['group'] === group){
+                                        archive[i]['items'] = newchannel['items']; // add loaded items to url archive
+                                        channel = archive[i];
+                                    }
+                                }
+
+                                if(newchannel['items'].length > 0){
+                                    channels.push(newchannel); // url to channels selection
+                                    for(i=0;i<urlmax;i++){
+                                        bundle.push(channel['items'][i]); // url items to bundle
+                                    }
+                                    sortBundle();
+                                }
+
+                            }else{
+
+                                alert('Problemo! importing ' + url );
+
+                            }
+
+                            // remove loading class from button..
+                            var loadingelements = document.querySelectorAll('[data-feedurl]');
+                            for ( var i = 0; i < loadingelements.length; i++ ) {
+                                if(loadingelements[i].getAttribute('data-feedurl') == url){
+                                    loadingelements[i].classList.remove('loading');
+                                }
+                            }
+
+
+                            displayBundle();
+
+                        });
+                            
+                            
+                           
+                            
+                            
+                            
+						}else{
+                            
+                            validateOpmlUrl(str,function(valid){
+                                if(valid['chk'] == 1){
+                                    // opml
+                                    console.log('Adopting opml '+ str);
+
+                                }else{
+                                      console.log('Not a valid url: '+ str);
+
+                                }
+                            });
+                        }
+                
 					});
-					
-				}
-			});
+			
 			
 		}
 		
