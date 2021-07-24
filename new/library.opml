@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<opml version="2.0">
+	<head>
+		<title>Feedboard library</title>
+		<dateCreated>Wed, 17 Oct 2017 19:52:53 GMT</dateCreated>
+		<!-- generator="WordPress/4.8.2" -->
+	</head>
+	
+	<body> 
+
+ 	<outline type="category" title="Mainstream News">
+		<outline text="BBC News World Edition" title="BBC World" type="rss" xmlUrl="http://newsrss.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml" htmlUrl="http://news.bbc.co.uk/go/rss/-/2/hi/default.stm"/>
+    	<outline text="Google News" title="Google News" type="rss" xmlUrl="http://news.google.com/?output=rss" htmlUrl="http://news.google.com/"/> 
+		<outline text="Wired Top Stories" title="Wired Top Stories" type="link" xmlUrl="http://www.wired.com/news/feeds/rss2/0,2610,,00.xml" htmlUrl="http://www.wired.com"/>
+		<outline text="CNN Top Stories" title="CNN Top Stories" type="link" xmlUrl="http://rss.cnn.com/rss/cnn_topstories.rss" htmlUrl="http://www.cnn.com"/>
+		<outline text="CNN World News" title="CNN World" type="rss" xmlUrl="http://rss.cnn.com/rss/edition_world.rss" htmlUrl="http://cnn.com/"/>
+    </outline>
+    
+	<outline type="category" title="Nieuws (Dutch/mixed)">
+		<outline text="Nu.nl" title="Nu.nl" type="rss" xmlUrl="https://www.nu.nl/rss" htmlUrl="https://www.nu.nl"/>
+		<outline text="NOS Journaal" title="NOS Journaal" type="rss" xmlUrl="http://feeds.nos.nl/nosjournaal" htmlUrl="https://www.nos.nl/nosjournaal"/>
+		<outline text="Trouw dagblad" title="Trouw dagblad" type="rss" xmlUrl="https://www.trouw.nl/home/rss.xml" htmlUrl="https://www.trouw.nl"/>
+		<outline text="NRC dagblad" title="NRC dagblad" type="rss" xmlUrl="https://www.nrc.nl/rss/" htmlUrl="https://www.nrc.nl"/>
+	</outline>
+
+	<outline type="category" title="Opinie (Dutch/mixed)"> 
+        <outline text="De lange Mars" title="De lange Mars plus nieuws" type="rss" xmlUrl="https://www.dlmplus.nl/feed/" htmlUrl="http://www.dlmplus.nl"/>
+		<outline text="Earth Matters" title="earth-matters" type="rss" xmlUrl="https://www.earth-matters.nl/rss/0/algemeen.rss" htmlUrl="http://www.earth-matters.nl"/>
+		<outline text="Want to know" title="Want to Know nieuws" type="rss" xmlUrl="https://www.wanttoknow.nl/feed" htmlUrl="http://www.wanttoknow.nl"/>
+	<outline text="Bits of Freedom" title="Bits of Freedom" type="rss" xmlUrl="https://www.bitsoffreedom.nl/feed" htmlUrl="https://www.bitsoffreedom.nl"/>
+	
+
+</outline>
+
+	<outline type="category" title="Opinion (INT/mixed)"> 
+		<outline text="Waking Times" title="Waking Times" type="rss" xmlUrl="https://www.wakingtimes.com/feed" htmlUrl="https://www.wakingtimes.com/"/>
+		<outline text="Humans are free" title="Humans are free" type="rss" xmlUrl="https://humansarefree.com/feed" htmlUrl="https://humansarefree.com/"/>
+		<outline text="Corbett report" title="Corbett report" type="rss" xmlUrl="https://corbettreport.com/feed" htmlUrl="https://corbettreport.com/"/>
+    </outline> 
+    
+    		
+
+    <outline type="category" title="Popular">
+		<outline text="Boingboing" type="link" xmlUrl="http://feeds.feedburner.com/boingboing/ibag" htmlUrl="http://www.boingboing.com" updated="" />
+		<outline text="Mashable" type="link" xmlUrl="http://feeds.feedburner.com/Mashable" htmlUrl="http://www.mashable.com" updated="" />
+        <outline text="Makeuseof" title="Makeuseof" type="rss" xmlUrl="http://feeds.feedburner.com/Makeuseof" htmlUrl="https://www.makeuseof.com/"/> 
+        <outline text="Engadget" title="Engadget" type="rss" xmlUrl="http://www.engadget.com/rss.xml" htmlUrl="http://www.engadget.com"/>
+        <outline text="Gizmodo" title="Gizmodo" type="rss" xmlUrl="https://gizmodo.com/rss" htmlUrl="http://gizmodo.com"/>
+	</outline>
+
+
+	<outline type="category" title="Art">
+		<outline text="Hifructose" type="link" xmlUrl="http://hifructose.com/feed/" htmlUrl="http://hifructose.com" updated="" />
+		<outline text="Aestheticamagazine" type="link" xmlUrl="http://www.aestheticamagazine.com/feed/" htmlUrl="http://aestheticamagazine.com" updated="" />
+	</outline>
+    
+
+	<outline type="category" title="Science">
+    <outline text="NASA gov" title="NASA gov" type="rss" xmlUrl="https://www.nasa.gov/rss/dyn/breaking_news.rss" htmlUrl="https://www.nasa.gov"/>
+  		<outline text="Scientific American" title="Scientific American" type="rss" xmlUrl="http://rss.sciam.com/ScientificAmerican-Global" htmlUrl="https://www.scientificamerican.com/"/>
+		<outline text="Digg Science" title="Digg Science" type="rss" xmlUrl="http://digg.com/channel/science.rss" htmlUrl="http://digg.com/"/>
+  		<outline text="CNN Science &amp; Space" title="CNN Science &amp; Space" type="rss" xmlUrl="http://rss.cnn.com/rss/edition_space.rss" htmlUrl="http://cnn.com/"/>
+	</outline>
+
+	<outline type="category" title="Technology" text="Technology">
+        <outline text="TechCrunch" title="TechCrunch" type="rss" xmlUrl="http://feeds.feedburner.com/Techcrunch" htmlUrl="http://www.techcrunch.com"/>
+        <outline text="Slashdot" title="Slashdot" type="rss" xmlUrl="http://slashdot.org/index.rss" htmlUrl="http://slashdot.org/"/>
+		<outline text="Tweakers.net" type="link" xmlUrl="http://feeds.feedburner.com/tweakers/mixed" htmlUrl="https://tweakers.net/nieuws/" updated="" />
+  		<outline text="Digg Technology" title="Digg Technology" type="rss" xmlUrl="http://digg.com/channel/technology.rss" htmlUrl="http://digg.com/"/>
+        <outline text="Lifehacker" title="Lifehacker" type="rss" xmlUrl="https://lifehacker.com/rss" htmlUrl="http://lifehacker.com"/>
+    </outline>
+
+
+
+	
+</body>
+</opml>

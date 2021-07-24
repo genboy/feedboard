@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Feedboard 0.5</title>
+
+<!-- Set document type charset -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- Tell IE8 or 9 to use latest renderingengine version or use Chroom frame engine -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<!-- viewport locked -->
+<meta name="viewport" content="user-scalable=no, width=device-width" />
+
+<!-- load css custom files -->
+<link rel="stylesheet" type="text/css" href="css/basic.css" />
+<link rel="stylesheet" type="text/css" href="css/feeds.css" />
+
+<!-- load google-fonts -->
+<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet" />
+<style type="text/css">
+body{
+font-family: 'VT323', monospace;
+	font-size:18px;
+}
+</style>
+<!-- load js jquery and custom files -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+
+
+<script>
+
+
+
+var FeedBoard = function(){
+
+	var archive = {}; // feedchannel listing all rss link references idx - title, group, category, desc, siteurl, feedurl, lastupdated ( lastimported )
+	var groups = {}; // array with group/opml reference idx - title, desc, opmlurl, siteurl, lastupdated
+	var categories = {}; // feed categories list idx - name
+	var channels = {}; // array of urls selected for display idx - archive idx
+	var bundle = {}; // array of items from selected urls (for display and sorting etc.) idx - archive idx title, feedurl, lastupdated
+
+	var importsource = ''; // a temporary source holder for analysis
+	var importsourcetype = ''
+	var limiter = 3; // default amount of feeditems each url for speeding up the proces
+
+
+	// innitialize
+	this.innitialize = function(){
+
+		console.log('innitialize..');
+
+		// check archive
+		if( archive.length > 0 ){
+
+			this.list();
+
+		}else{
+
+			this.start();
+
+		}
+
+
+	}
+
+	this.start = function(){
+
+			// startup
+			console.log('startscreen');
+
+
+	}
+
+	this.list = function(){
+
+			// archive
+			console.log('archive display');
+
+	}
+
+	this.sourceinput = function(url){
+
+		if( this.isUrl(url) ){
+
+			console.log('checking '+url);
+			this.checksource( url, function(){
+
+				// callback after source request
+			 	if(importsource != '' && typeof importsource != 'undefined'){
+
+					console.log(importsource);
+
+					if(importsourcetype != ''){
+						console.log('Sourcetype: '+importsourcetype);
+					}
+
+					// check type
+					var $source = $(importsource);
+
+
+
+				}else{
+
+					console.log('Source not available.');
+
+				}
+			});
+
+		}else{
+
+			console.log('The input "'+url+'" is not a valid url');
+			$('.searchextendbox').fadeIn();
+
+		}
+	}
+
+
+	this.checksource = function(sourceurl, callback){
+
+		importsource = '';
+		importsourcetype = '';
+		var ajaxQuery = $.ajax({
+			url: 'assets/parser_new.php?url='+sourceurl,
+			//dataType: 'xml',
+
+			success: function(response, status, xhr){
+
+				//importsourcetype = xhr.getResponseHeader("content-type");
+				importsourcetype = xhr.getResponseHeader("content-type");
+				importsource = response;
+				callback();
+
+			},
+
+			error: function(response){
+				importsource = response.error;
+				callback();
+			}
+		});
+
+
+
+
+	}
+
+
+	/* lib functions */
+	this.isUrl = function(s) {
+		var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
+		return regexp.test(s);
+	}
+
+
+
+	// init
+	this.innitialize();
+
+}
+
+
+$( document ).ready(function() {
+
+	var usrFeedBoard = new FeedBoard();
+
+	$('#sourcebox').on( 'click', '.addsourcebutton', function(){
+
+		var url = $('#sourcebox .sourcestring').val();
+		usrFeedBoard.sourceinput(url);
+
+	});
+
+	$('#sourcebox .sourcestring').keypress(function (e) {
+
+  		if (e.which == 13) {
+			$('#sourcebox .addsourcebutton').click();
+			return false;
+		}
+	});
+
+	$('#sourcebox').on( 'propertychange change click input paste', '.sourcestring', function(){
+
+		$('.searchextendbox').fadeOut('fast');
+
+	});
+
+	$('#searchextendbox').on( 'click', '.googlebutton', function(){
+		var input = $('#sourcebox .sourcestring').val();
+		window.open('https://www.google.com/search?dcr=0&source=hp&q='+input, '_blank');
+		$('.searchextendbox').fadeOut();
+		return false;
+	});
+
+});
+
+
+
+</script>
+</head> 
+<body>
+<div id="pagecontainer" style="text-align:center;">
+
+	<div id="sourcebox">
+		<h3>Test! Input source url! Test!</h3>
+		<p>html, opml or rss</p>
+		<input name="sourcestring" id="sourcestring" class="sourcestring" type="text" style="width:500px;" />
+		<div class="addsourcebutton">get source</div>
+		<div class="searchextendbox" style="display:none;">search on google
+			<div class="googlebutton">search on google</div>
+		</div>
+	</div>
+
+</div>
+</body>
