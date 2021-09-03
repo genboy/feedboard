@@ -1,5 +1,5 @@
 # feedboard
-RSS Feed library in vanilla js
+RSS Feed library in vanilla js and php (for parsing)
 
 # feedboard
 
