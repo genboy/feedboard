@@ -2,7 +2,7 @@
 
 
 // opml file with links
-var linklibrary = ['https://webdesigndenhaag.net/lab/feedboard/library.opml', 
+var linklibrary = ['library.opml', 
 				   //'https://raw.githubusercontent.com/marklogic-community/feed/master/test-scripts/data/opml_google-reader.opml',
 				   //'http://webdesigndenhaag.net/project/feedboard/construct.opml',
 				   //http://webdesigndenhaag.net/lab/wp-links-opml.php'
@@ -173,42 +173,42 @@ function importFeedChannel(url,group, callback){
 
 				   if(items[i].getElementsByTagName("content")[0] && items[i].getElementsByTagName("content")[0].firstChild )
                    item['description'] = items[i].getElementsByTagName("content")[0].firstChild.nodeValue;
-	   
-					   
+
+
 				   if( items[i].getElementsByTagName("pubDate")[0] )
 				   item['pubDate'] = items[i].getElementsByTagName("pubDate")[0].firstChild.nodeValue;
 
 				   if(items[i].getElementsByTagName("link")[0])
 				   item['link'] = items[i].getElementsByTagName("link")[0].firstChild.nodeValue;
-					  
-					   
-				   // get image 
-					if(items[i].getElementsByTagName("image")[0] ){  
+
+
+				   // get image
+					if(items[i].getElementsByTagName("image")[0] ){
 						if( items[i].getElementsByTagName("image")[0].getElementsByTagName("url") ){
-				   			item['image'] = items[i].getElementsByTagName("image")[0].getElementsByTagName("url").nodeValue;	
+				   			item['image'] = items[i].getElementsByTagName("image")[0].getElementsByTagName("url").nodeValue;
 						}else
-						if( items[i].getElementsByTagName("image")[0].firstchild ){ 
-				   			item['image'] = items[i].getElementsByTagName("image")[0].firstchild.nodeValue;	
+						if( items[i].getElementsByTagName("image")[0].firstchild ){
+				   			item['image'] = items[i].getElementsByTagName("image")[0].firstchild.nodeValue;
 						}
 					}else
-					if( items[i].getElementsByTagName("enclosure") && items[i].getElementsByTagName("enclosure").type == 'image/jpeg' ){  
-				   		item['image'] = items[i].getElementsByTagName("enclosure").url;	
+					if( items[i].getElementsByTagName("enclosure") && items[i].getElementsByTagName("enclosure").type == 'image/jpeg' ){
+				   		item['image'] = items[i].getElementsByTagName("enclosure").url;
 					}else
 					if( items[i].getElementsByTagName('media\\:thumbnail')[0] && items[i].getElementsByTagName('media\\:thumbnail')[0].firstChild ){
-						item['image'] = items[i].getElementsByTagName('media\\:thumbnail')[0].firstChild.nodeValue; 
+						item['image'] = items[i].getElementsByTagName('media\\:thumbnail')[0].firstChild.nodeValue;
 					}else
 					if(item['description']){
-					// image tag?   
-					// enclosure tag? <enclosure type="image/jpeg" url="https://nos.nl/data/image/2017/10/17/425020/320x320.jpg" />	   
+					// image tag?
+					// enclosure tag? <enclosure type="image/jpeg" url="https://nos.nl/data/image/2017/10/17/425020/320x320.jpg" />
 					   	var imgs = getImageUrlsFromString(item['description']);
 						if(imgs && imgs.length > 0 && typeof imgs != 'undefined'){
-							//var coverimage = document.createElement('img'); 
+							//var coverimage = document.createElement('img');
 							if(imgs[0]){
 								item['image'] = imgs[0];
 							}
 						}
 					}
-					   
+
 				   }
                    item['channelgroup'] = group;
                    item['feedurl'] = url;
@@ -236,23 +236,23 @@ function toggleChannel(opt){
 
 
     if(checkSubArr(channels,'feedurl',url) == 1){
-		
+
         removeUrlfromBundle(url,group);
-		
+
 		// remove from filterlist too
 		for(var i = filterbundle.length; i--;){
 			if (filterbundle[i] === url ){
 				filterbundle.splice(i, 1);
 			}
 		}
-		
+
         //opt.setAttribute('class','nonactive');
         for ( var i = 0; i < elements.length; i++ ) {
             if(elements[i].getAttribute('data-feedurl') == url){
             elements[i].setAttribute('class','nonactive');
             }
         }
-		
+
     }else{
         //opt.setAttribute('class','active');
         for ( var i = 0; i < elements.length; i++ ) {
@@ -264,8 +264,8 @@ function toggleChannel(opt){
 
         addUrlToBundle(url,group);
     }
-	
-	
+
+
 	// de activate group if none submember selected
 	var grpchk = checkSubArr( bundle,'group', group );
 	if(grpchk == 0){
@@ -276,19 +276,19 @@ function toggleChannel(opt){
             }
         }
 	}
-	
+
 }
 
 function addUrlToBundle(url,group){ // add channel feed items to bundle
 
 	var channel = getArchiveUrl(url,group); //getSubArr(archive,'feedurl',url);
-	
+
     var urlmax =  document.getElementById("feedmax").options[document.getElementById("feedmax").selectedIndex].text;
-	
+
     if(channel){
 
 	filterbundle.push(url);
-	
+
         if(!channel['items']){
 
             var importing = importFeedChannel( url, group, function(newchannel){
@@ -354,7 +354,7 @@ function addUrlToBundle(url,group){ // add channel feed items to bundle
 }
 
 function removeUrlfromBundle(url,group){ // remove channel feed items from channels and bundle
-	
+
 	// remove from active channels
 	for(var i = channels.length; i--;){
 	    if (channels[i]['feedurl'] === url && channels[i]['group'] === group){
@@ -367,7 +367,7 @@ function removeUrlfromBundle(url,group){ // remove channel feed items from chann
 		    bundle.splice(i, 1);
 		}
 	}
-	
+
     displayBundle();
 }
 
@@ -388,28 +388,28 @@ function reloadBundle(){
 
 /********* UI ***********/
 function displayBundle(){
-	
+
 	// define text length
 	var l = 140;
     if(document.getElementById("setminimize").checked != true){
 		l = 680;
 	}
-	
+
     document.getElementById("contentbar").innerHTML = '';
     var holder = document.createElement('ul');
     holder.setAttribute('id','feedbundle');
-	
+
     if(bundle.length > 0){
-		
+
         for(i=0;i<bundle.length;i++){
-			
+
 		if( checkArr( filterbundle, bundle[i]['feedurl'] ) == 1 ) {
-		
+
           var box = document.createElement('li');
           box.setAttribute('class','bundle-item');
           box.setAttribute('data-group', bundle[i]['group'] );
           box.setAttribute('data-feedurl', bundle[i]['link'] );
-		
+
           var ttl = document.createElement('h3');
           var lnk = document.createElement('a');
           lnk.setAttribute('href',bundle[i]['link']);
@@ -434,41 +434,41 @@ function displayBundle(){
           var dtxt = document.createTextNode( ts );
           dtt.appendChild(dtxt);
 	  	  metabox.appendChild(dtt); // pubdate
-			if( bundle[i]['image'] ){ 
-			
+			if( bundle[i]['image'] ){
+
 				var coverimage = document.createElement('img');
 				coverimage.setAttribute( 'src', bundle[i]['image'] );
 				coverimage.setAttribute( 'widht', '20%' );
 				coverimage.setAttribute( 'height', 'auto' );
 				coverimage.setAttribute( 'onerror', 'javascript:this.src=\'https://avatars3.githubusercontent.com/u/20241931?v=3&s=460\'' );
 				box.appendChild(coverimage);
-			/*  
+			/*
 		  	var imgs = getImageUrlsFromString(bundle[i]['description']);
-			var coverimage = document.createElement('img'); 
+			var coverimage = document.createElement('img');
 			if(imgs[0]){
 			coverimage.setAttribute( 'src', imgs[0] );
 			coverimage.setAttribute( 'onerror', 'javascript:this.src=\'https://avatars3.githubusercontent.com/u/20241931?v=3&s=460\'' );
-			box.appendChild(coverimage);	
+			box.appendChild(coverimage);
 			}
-			*/   
+			*/
 			}
-			
-			console.log(coverimage); 
-		 
+
+			console.log(coverimage);
+
 	      box.appendChild(metabox); // time and url
           box.appendChild(ttl); // item title
-          
+
 		  var txt = document.createElement('div');
           txt.setAttribute('class', 'itemtextbox');
           txt.innerHTML = cleanHtmlText(bundle[i]['description'],l);
-			
+
           box.appendChild(txt);
 
           holder.appendChild(box);
-			
+
 		}
-				
-		   
+
+
        	}
 
     }else{
@@ -550,20 +550,20 @@ function displayChannels(){
         var atl = document.createElement('h3');
         atl.innerHTML = 'Bundle';
         activebox.appendChild(atl);
-		
+
         for(h=0;h<groups.length;h++){
             if(checkSubArr(channels,'group',groups[h]) == 1){
-				
+
 				var box = document.createElement('div');
 				box.setAttribute('data-name', groups[h]);
-					
-				
+
+
 				var ttl = document.createElement('h4');
 				ttl.setAttribute('onclick', 'toggleChannelGroup(this.parentNode);' );
 				ttl.innerHTML = groups[h];
 				box.appendChild(ttl);
-		
-				
+
+
 				var lst = document.createElement('ul');
 						for(i=0;i<channels.length;i++){
 							if(channels[i]['group'] == groups[h]){
@@ -607,8 +607,8 @@ function displayChannels(){
 }
 
 function displaySettings(){
-	
-	
+
+
     var dsp = document.createElement('div');
     dsp.setAttribute('id', 'sourcebox');
 	var inp = document.createElement('input');
@@ -621,12 +621,12 @@ function displaySettings(){
             sourceinput(this.value); //validate(e);
         }
     });
-    
+
     dsp.appendChild(inp);
     document.getElementById("optionbar").appendChild(dsp);
-    
-    
-	
+
+
+
     var dsp = document.createElement('span');
     dsp.setAttribute('id', 'selectboxfeedmax');
     dsp.setAttribute('class', 'option');
@@ -649,7 +649,7 @@ function displaySettings(){
     box.appendChild(opt3);
     box.appendChild(opt4);
     box.appendChild(opt5);
-    dsp.appendChild(box); 
+    dsp.appendChild(box);
     dsp.appendChild(document.createTextNode(' items/channel'));
     document.getElementById("optionbar").appendChild(dsp);
 
@@ -663,7 +663,7 @@ function displaySettings(){
     box.setAttribute('onchange', 'reloadBundle();');
 
     dsp.appendChild(box);
-	
+
     dsp.appendChild(document.createTextNode(' minimize'));
     document.getElementById("optionbar").appendChild(dsp);
 }
@@ -703,33 +703,33 @@ function toggleChannelFilter(opt){
 	//alert(opt.getAttribute('data-feedurl'));
 	var url = opt.getAttribute('data-feedurl');
 	var chk = checkArr(filterbundle,url);
-	
+
 	if(chk == 1){
-		
+
 		for(var i = filterbundle.length; i--;){
 			if (filterbundle[i] === url ){
 				filterbundle.splice(i, 1);
 				chk = 1; // url is just removed
 			}
 		}
-		
+
 	}else if(chk == 0){
-		
+
 		filterbundle.push(opt.getAttribute('data-feedurl'));
-		
+
 	}
-	
+
 	reloadBundle();
 	console.log(filterbundle);
 }
 
 
 function toggleChannelGroup(group){
-	
+
 	//alert( group.getAttribute('data-name') );
-	
+
 	var grpelms = group.getElementsByTagName('li');
-	
+
 	var tst = 0;
 	for(i=0;i<grpelms.length;i++){
 		if( grpelms[i].getElementsByTagName('input')[0].checked ){
@@ -737,54 +737,54 @@ function toggleChannelGroup(group){
 		}
 		//console.log(grpelms[i].getElementsByTagName('input')[0].checked);
 	}
-	
-	for(i=0;i<grpelms.length;i++){	
-		
+
+	for(i=0;i<grpelms.length;i++){
+
 		if(tst == 1){
 			grpelms[i].getElementsByTagName('input')[0].checked = false;
 		}else{ // add all from filterbundle
 			grpelms[i].getElementsByTagName('input')[0].checked = true;
 		}
-		
+
 		for(var d = filterbundle.length; d--;){
-			
+
 			if (filterbundle[d] === grpelms[i].getAttribute('data-feedurl') ){
 				filterbundle.splice(d, 1);	// remove all from filterbundle
 				console.log('removed '+grpelms[i].getAttribute('data-feedurl')+' from filterlist');
 			}
 		}
 		if(tst == 0){ // add all from filterbundle
-			filterbundle.push(grpelms[i].getAttribute('data-feedurl'));	
+			filterbundle.push(grpelms[i].getAttribute('data-feedurl'));
 			console.log('added '+grpelms[i].getAttribute('data-feedurl')+' to filterlist');
-		} 
-		
-	} 
+		}
+
+	}
 	reloadBundle();
 	console.log(filterbundle);
-	 
-	
+
+
 }
 
 
 
 
 function sourceinput(str){
-	
+
 	if( isUrl(str) ){
-		
+
 		var exst = 0;
 		if( checkArr(linklibrary, str) == 1) exst = 1;
 		if( checkSubArr( archive, 'feedurl', str ) == 1) exst = 1;
 		if(exst == 1){
-			
+
 			console.log('Allready listed '+ str);
-			
+
 		}else{
-			
+
                         validateFeedUrl(str,function(valid){
-                            
+
 						if(valid['chk'] == 1){
-							// rss feed 
+							// rss feed
 							console.log('Adopting RSS '+ str);
                             //addUrlToBundle(str,'new');
                             //filterbundle.push(str);
@@ -832,14 +832,14 @@ function sourceinput(str){
                             displayBundle();
 
                         });
-                            
-                            
-                           
-                            
-                            
-                            
+
+
+
+
+
+
 						}else{
-                            
+
                             validateOpmlUrl(str,function(valid){
                                 if(valid['chk'] == 1){
                                     // opml
@@ -851,20 +851,20 @@ function sourceinput(str){
                                 }
                             });
                         }
-                
+
 					});
-			
-			
+
+
 		}
-		
+
 	}else{
 		console.log('Not a valid url: '+ str);
 	}
-	
+
 }
 
 function searchoptions(){
-	
+
 }
 
 
@@ -946,7 +946,7 @@ function loadXMLHTTP(url,callback){
 
 
 function getImageUrlsFromString(str){
-	
+
 	var tmp = document.createElement('div');
 	str = str.replace("<![CDATA[", "").replace("]]>", "");
 	tmp.innerHTML = str;
@@ -959,19 +959,19 @@ function getImageUrlsFromString(str){
 		}
 	}
 	if(imgurls[0]){
-		return( imgurls ); 
-	} 
+		return( imgurls );
+	}
 }
 
 function cleanHtmlText(trunc,l){
 
 	var textlength = 140;
 	if(l) textlength = l;
-	
+
 	trunc = strip_html_tags(trunc); // cleanup html tags
 
 	if (trunc.length > textlength) {
-		trunc = trunc.substring(0, textlength);  
+		trunc = trunc.substring(0, textlength);
 		trunc = trunc.replace(/\w+$/, '');
 		trunc = trunc + '..<div class="clr"></div>'
 	}
