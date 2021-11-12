@@ -31,13 +31,13 @@ Version 0.5
 - adjusted display functions to async proces
 - added css
 
+Version 0.6
+- date/time from now format
 
 
 TO DO
 Wishlist
-- date/time format (.. time ago) .. https://coderwall.com/p/uub3pw/javascript-timeago-func-e-g-8-hours-ago
 - desktop and mobile styling
 - display bundle by group (bundle)
 - !? filter image from description
-
 - add urls input data

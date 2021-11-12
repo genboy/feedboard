@@ -2,7 +2,7 @@
 
 
 // opml file with links
-var linklibrary = ['library.opml', 
+var linklibrary = ['https://genboy.net/info/feedboard/library.opml',
 				   //'https://raw.githubusercontent.com/marklogic-community/feed/master/test-scripts/data/opml_google-reader.opml',
 				   //'http://webdesigndenhaag.net/project/feedboard/construct.opml',
 				   //http://webdesigndenhaag.net/lab/wp-links-opml.php'
@@ -176,7 +176,9 @@ function importFeedChannel(url,group, callback){
 
 
 				   if( items[i].getElementsByTagName("pubDate")[0] )
-				   item['pubDate'] = items[i].getElementsByTagName("pubDate")[0].firstChild.nodeValue;
+					 item['pubDate'] = items[i].getElementsByTagName("pubDate")[0].firstChild.nodeValue;
+					 //item['pubDate'] = time_ago( new Date( items[i].getElementsByTagName("pubDate")[0].firstChild.nodeValue ) );
+
 
 				   if(items[i].getElementsByTagName("link")[0])
 				   item['link'] = items[i].getElementsByTagName("link")[0].firstChild.nodeValue;
@@ -429,8 +431,8 @@ function displayBundle(){
           metabox.appendChild(web); // website
 
           var dtt = document.createElement('time');
-          var ts = ' on '+bundle[i]['pubDate'];
-          //var tm = calculateSince(ts);
+          //var ts = ' on '+bundle[i]['pubDate'];
+					var ts = ' - '+ time_ago( new Date( bundle[i]['pubDate'] ) );
           var dtxt = document.createTextNode( ts );
           dtt.appendChild(dtxt);
 	  	  metabox.appendChild(dtt); // pubdate
@@ -612,20 +614,12 @@ function displaySettings(){
     var dsp = document.createElement('div');
     dsp.setAttribute('id', 'sourcebox');
 	var inp = document.createElement('input');
-	inp.setAttribute('id', 'sourcestring');
-	inp.setAttribute('name', 'sourcestring');
+	inp.setAttribute('id', 'sourcesting');
+	inp.setAttribute('name', 'sourcesting');
 	inp.setAttribute('type', 'text');
-	//inp.addEventListener('onchange', sourceinput(this.value) );
-    inp.addEventListener("keydown", function (e) {
-        if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
-            sourceinput(this.value); //validate(e);
-        }
-    });
-
+	inp.setAttribute('onchange', 'sourceinput(this.value);');
     dsp.appendChild(inp);
     document.getElementById("optionbar").appendChild(dsp);
-
-
 
     var dsp = document.createElement('span');
     dsp.setAttribute('id', 'selectboxfeedmax');
@@ -781,79 +775,22 @@ function sourceinput(str){
 
 		}else{
 
-                        validateFeedUrl(str,function(valid){
+			validateOpmlUrl(str,function(valid){
+				if(valid['chk'] == 1){
+					// opml
+					console.log('Adopting opml '+ str);
 
+				}else{
+
+					validateFeedUrl(str,function(valid){
 						if(valid['chk'] == 1){
 							// rss feed
 							console.log('Adopting RSS '+ str);
-                            //addUrlToBundle(str,'new');
-                            //filterbundle.push(str);
-                            var group = 'custom';
-                             var importing = importFeedChannel( str, group, function(newchannel){
-
-                            if(newchannel['items']){
-
-                                for(var c = newchannel['items'].length; c--;){
-                                    // add channel info (website url from opml list, not from rss)
-                                    //newchannel['items'][c]['website'] = channel['website'];
-                                    //newchannel['items'][c]['group'] = group;
-                                    //newchannel['items'][c]['feedtitle'] = channel['title'];
-                                }
-                                for(var i = archive.length; i--;){
-                                    if (archive[i]['feedurl'] === str && archive[i]['group'] === group){
-                                        archive[i]['items'] = newchannel['items']; // add loaded items to url archive
-                                        channel = archive[i];
-                                    }
-                                }
-
-                                if(newchannel['items'].length > 0){
-                                    channels.push(newchannel); // url to channels selection
-                                    for(i=0;i<urlmax;i++){
-                                        bundle.push(channel['items'][i]); // url items to bundle
-                                    }
-                                    sortBundle();
-                                }
-
-                            }else{
-
-                                alert('Problemo! importing ' + url );
-
-                            }
-
-                            // remove loading class from button..
-                            var loadingelements = document.querySelectorAll('[data-feedurl]');
-                            for ( var i = 0; i < loadingelements.length; i++ ) {
-                                if(loadingelements[i].getAttribute('data-feedurl') == url){
-                                    loadingelements[i].classList.remove('loading');
-                                }
-                            }
-
-
-                            displayBundle();
-
-                        });
-
-
-
-
-
-
-						}else{
-
-                            validateOpmlUrl(str,function(valid){
-                                if(valid['chk'] == 1){
-                                    // opml
-                                    console.log('Adopting opml '+ str);
-
-                                }else{
-                                      console.log('Not a valid url: '+ str);
-
-                                }
-                            });
-                        }
-
+						}
 					});
 
+				}
+			});
 
 		}
 
@@ -1034,4 +971,64 @@ function sortBundle(){ // sort the bundle by pubDate
 	if(keyA > keyB) return -1;
 	return 0;
     });
+}
+
+/**** Time ago ****/
+/*
+https://stackoverflow.com/questions/3177836/how-to-format-time-since-xxx-e-g-4-minutes-ago-similar-to-stack-exchange-site
+https://coderwall.com/p/uub3pw/javascript-timeago-func-e-g-8-hours-ago
+*/
+function time_ago(time) {
+
+  switch (typeof time) {
+    case 'number':
+      break;
+    case 'string':
+      time = +new Date(time);
+      break;
+    case 'object':
+      if (time.constructor === Date) time = time.getTime();
+      break;
+    default:
+      time = +new Date();
+  }
+  var time_formats = [
+    [60, 'seconds', 1], // 60
+    [120, '1 minute ago', '1 minute from now'], // 60*2
+    [3600, 'minutes', 60], // 60*60, 60
+    [7200, '1 hour ago', '1 hour from now'], // 60*60*2
+    [86400, 'hours', 3600], // 60*60*24, 60*60
+    [172800, 'Yesterday', 'Tomorrow'], // 60*60*24*2
+    [604800, 'days', 86400], // 60*60*24*7, 60*60*24
+    [1209600, 'Last week', 'Next week'], // 60*60*24*7*4*2
+    [2419200, 'weeks', 604800], // 60*60*24*7*4, 60*60*24*7
+    [4838400, 'Last month', 'Next month'], // 60*60*24*7*4*2
+    [29030400, 'months', 2419200], // 60*60*24*7*4*12, 60*60*24*7*4
+    [58060800, 'Last year', 'Next year'], // 60*60*24*7*4*12*2
+    [2903040000, 'years', 29030400], // 60*60*24*7*4*12*100, 60*60*24*7*4*12
+    [5806080000, 'Last century', 'Next century'], // 60*60*24*7*4*12*100*2
+    [58060800000, 'centuries', 2903040000] // 60*60*24*7*4*12*100*20, 60*60*24*7*4*12*100
+  ];
+  var seconds = (+new Date() - time) / 1000,
+    token = 'ago',
+    list_choice = 1;
+
+  if (seconds == 0) {
+    return 'Just now'
+  }
+  if (seconds < 0) {
+    seconds = Math.abs(seconds);
+    token = 'from now';
+    list_choice = 2;
+  }
+  var i = 0,
+    format;
+  while (format = time_formats[i++])
+    if (seconds < format[0]) {
+      if (typeof format[2] == 'string')
+        return format[list_choice];
+      else
+        return Math.floor(seconds / format[2]) + ' ' + format[1] + ' ' + token;
+    }
+  return time;
 }
