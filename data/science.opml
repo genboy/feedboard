@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<opml version="2.0">
+	<head>
+		<title>Feedboard library</title>
+		<dateCreated>Wed, 17 Oct 2017 19:52:53 GMT</dateCreated>
+		<!-- generator="WordPress/4.8.2" -->
+	</head>
+
+	<body>
+
+
+<outline type="category" title="Science" text="Science EN"> 
+		<outline text="Scientific American" title="Scientific American" type="rss" xmlUrl="http://rss.sciam.com/ScientificAmerican-Global" htmlUrl="https://www.scientificamerican.com/"/>
+</outline>
+
+
+
+
+
+
+</body>
+</opml>

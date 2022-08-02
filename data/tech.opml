@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<opml version="2.0">
+	<head>
+		<title>Feedboard library</title>
+		<dateCreated>Wed, 17 Oct 2017 19:52:53 GMT</dateCreated>
+		<!-- generator="WordPress/4.8.2" -->
+	</head>
+
+	<body>
+
+		<outline type="category" title="Security" text="Security EN">
+		    <outline text="Security.nl" title="security.nl" type="rss" xmlUrl="https://www.security.nl/rss/headlines.xml" htmlUrl="https://www.security.nl"/>
+		    <outline text="Krebsonsecurity" title="Krebsonsecurity" type="rss" xmlUrl="https://krebsonsecurity.com/feed/" htmlUrl="https://krebsonsecurity.com"/>
+		    <outline text="The Hacker News" title="The Hacker News" type="rss" xmlUrl="http://feeds.feedburner.com/TheHackersNews?format=xml" htmlUrl="https://thehackernews.com/"/>
+		    <outline text="Risk Management Monitor" title="Risk Management" type="rss" xmlUrl="http://www.riskmanagementmonitor.com/feed/" htmlUrl="http://www.riskmanagementmonitor.com/"/>
+		    <outline text="Threat Post" title="Threat Post" type="rss" xmlUrl="https://threatpost.com/feed/" htmlUrl="https://threatpost.com/"/>
+		 
+		</outline>
+
+
+							<outline type="category" title="Technology" text="Technology EN">
+						        <outline text="TechCrunch" title="TechCrunch" type="rss" xmlUrl="http://feeds.feedburner.com/Techcrunch" htmlUrl="http://www.techcrunch.com"/>
+						        <outline text="Slashdot" title="Slashdot" type="rss" xmlUrl="http://slashdot.org/index.rss" htmlUrl="http://slashdot.org/"/>
+								<outline text="Tweakers.net" type="link" xmlUrl="http://feeds.feedburner.com/tweakers/mixed" htmlUrl="https://tweakers.net/nieuws/" updated="" />
+						  		<outline text="Digg Technology" title="Digg Technology" type="rss" xmlUrl="http://digg.com/channel/technology.rss" htmlUrl="http://digg.com/"/>
+						        <outline text="Lifehacker" title="Lifehacker" type="rss" xmlUrl="https://lifehacker.com/rss" htmlUrl="http://lifehacker.com"/>
+						    </outline>
+
+
+
+</body>
+</opml>

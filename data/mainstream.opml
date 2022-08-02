@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<opml version="2.0">
+	<head>
+		<title>Feedboard library</title>
+		<dateCreated>Wed, 17 Oct 2017 19:52:53 GMT</dateCreated>
+		<!-- generator="WordPress/4.8.2" -->
+	</head>
+
+	<body>
+
+ 	<outline type="category" title="Mainstream" text="Mainstream EN">
+		<outline text="BBC News World Edition" title="BBC World" type="rss" xmlUrl="http://newsrss.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml" htmlUrl="http://news.bbc.co.uk/go/rss/-/2/hi/default.stm"/>
+    	<outline text="Google News" title="Google News" type="rss" xmlUrl="http://news.google.com/?output=rss" htmlUrl="http://news.google.com/"/>
+		<outline text="Wired Top Stories" title="Wired Top Stories" type="link" xmlUrl="http://www.wired.com/news/feeds/rss2/0,2610,,00.xml" htmlUrl="http://www.wired.com"/>
+		<outline text="CNN Top Stories" title="CNN Top Stories" type="link" xmlUrl="http://rss.cnn.com/rss/cnn_topstories.rss" htmlUrl="http://www.cnn.com"/>
+		<outline text="CNN World News" title="CNN World" type="rss" xmlUrl="http://rss.cnn.com/rss/edition_world.rss" htmlUrl="http://cnn.com/"/>
+		<outline text="The Gateway Pundit" title="The Gateway Pundit" type="rss" xmlUrl="https://www.thegatewaypundit.com/feed" htmlUrl="https://www.thegatewaypundit.com/"/>
+
+    </outline>
+
+			<outline type="category" title="Mainstream" text="Mainstream NL">
+				<outline text="Nu.nl" title="Nu.nl" type="rss" xmlUrl="https://www.nu.nl/rss" htmlUrl="https://www.nu.nl"/>
+				<outline text="NOS Journaal" title="NOS Journaal" type="rss" xmlUrl="http://feeds.nos.nl/nosjournaal" htmlUrl="https://www.nos.nl/nosjournaal"/>
+				<outline text="Trouw dagblad" title="Trouw dagblad" type="rss" xmlUrl="https://www.trouw.nl/voorpagina/rss.xml" htmlUrl="https://www.trouw.nl"/>
+				<outline text="NRC dagblad" title="NRC dagblad" type="rss" xmlUrl="https://www.nrc.nl/rss/" htmlUrl="https://www.nrc.nl"/>
+				<outline text="Bits of Freedom" title="Bits of Freedom" type="rss" xmlUrl="https://www.bitsoffreedom.nl/feed" htmlUrl="https://www.bitsoffreedom.nl"/>
+			</outline>
+
+			    <outline type="category" title="Popular" text="Popular EN">
+					<outline text="Boingboing" type="link" xmlUrl="http://feeds.feedburner.com/boingboing/ibag" htmlUrl="http://www.boingboing.com" updated="" />
+					<outline text="Mashable" type="link" xmlUrl="http://feeds.feedburner.com/Mashable" htmlUrl="http://www.mashable.com" updated="" />
+			        <outline text="Makeuseof" title="Makeuseof" type="rss" xmlUrl="http://feeds.feedburner.com/Makeuseof" htmlUrl="https://www.makeuseof.com/"/>
+			        <outline text="Engadget" title="Engadget" type="rss" xmlUrl="http://www.engadget.com/rss.xml" htmlUrl="http://www.engadget.com"/>
+			        <outline text="Gizmodo" title="Gizmodo" type="rss" xmlUrl="https://gizmodo.com/rss" htmlUrl="http://gizmodo.com"/>
+				</outline>
+
+											<outline type="category" title="Science" text="Science EN">
+										    <outline text="NASA gov" title="NASA gov" type="rss" xmlUrl="https://www.nasa.gov/rss/dyn/breaking_news.rss" htmlUrl="https://www.nasa.gov"/>
+										  	<outline text="Digg Science" title="Digg Science" type="rss" xmlUrl="http://digg.com/channel/science.rss" htmlUrl="http://digg.com/"/>
+										  		<outline text="CNN Science &amp; Space" title="CNN Science &amp; Space" type="rss" xmlUrl="http://rss.cnn.com/rss/edition_space.rss" htmlUrl="http://cnn.com/"/>
+											</outline>
+
+
+</body>
+</opml>

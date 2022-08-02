@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<opml version="2.0">
+	<head>
+		<title>Feedboard library</title>
+		<dateCreated>Wed, 17 Oct 2017 19:52:53 GMT</dateCreated>
+		<!-- generator="WordPress/4.8.2" -->
+	</head>
+
+	<body>
+
+	<outline type="category" title="Art" text="Art EN">
+		<outline text="Hifructose" type="link" xmlUrl="http://hifructose.com/feed/" htmlUrl="http://hifructose.com" updated="" />
+		<outline text="Aestheticamagazine" type="link" xmlUrl="http://www.aestheticamagazine.com/feed/" htmlUrl="http://aestheticamagazine.com" updated="" />
+		<outline text="StreetArtNews" type="link" xmlUrl="https://streetartnews.net/rss" htmlUrl="https://streetartnews.net/" updated="" />
+		<outline text="TheArtNewspaper" type="link" xmlUrl="http://feeds.feedburner.com/theartnewspaper" htmlUrl="https://www.theartnewspaper.com/" updated="" />
+		<outline text="Artdaily" type="link" xmlUrl="http://artdaily.com/rss.asp" htmlUrl="http://artdaily.com" updated="" />
+	</outline>
+
+</body>
+</opml>

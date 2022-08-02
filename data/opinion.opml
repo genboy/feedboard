@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<opml version="2.0">
+	<head>
+		<title>Feedboard library</title>
+		<dateCreated>Wed, 17 Oct 2017 19:52:53 GMT</dateCreated>
+		<!-- generator="WordPress/4.8.2" -->
+	</head>
+
+	<body>
+
+
+	<outline type="category" title="Opinion" text="Opinion NL">
+		<outline text="Het Andere Nieuws" title="Het Andere Nieuws" type="rss" xmlUrl="https://hetanderenieuws.nl/feed" htmlUrl="https://hetanderenieuws.nl/"/>
+		<outline text="Gezondverstand" title="Gezondverstand" type="rss" xmlUrl="https://gezondverstand.eu/feed" htmlUrl="https://gezondverstand.eu/feed"/>
+		<outline text="Commonsense TV" title="Commonsense TV" type="rss" xmlUrl="https://commonsensetv.nl/feed" htmlUrl="https://commonsensetv.nl"/>
+		<outline text="Cafe Weltschmerz" title="Cafe Weltschmerz" type="rss" xmlUrl="https://cafeweltschmerz.nl/feed" htmlUrl="https://cafeweltschmerz.nl/feed"/>
+		<outline text="Earth Matters" title="Earth Matters columns" type="rss" xmlUrl="https://www.earth-matters.nl/rss/0/algemeen.rss" htmlUrl="http://www.earth-matters.nl"/>
+		<outline text="Want to know" title="Want to Know nieuws" type="rss" xmlUrl="https://www.wanttoknow.nl/feed" htmlUrl="http://www.wanttoknow.nl"/>
+    <outline text="De lange Mars" title="De lange Mars plus nieuws" type="rss" xmlUrl="https://www.dlmplus.nl/feed/" htmlUrl="http://www.dlmplus.nl"/>
+</outline>
+
+	<outline type="category" title="Opinion" text="Opinion EN">
+		<outline text="Corbett report" title="Corbett report" type="rss" xmlUrl="https://corbettreport.com/feed" htmlUrl="https://corbettreport.com/"/>
+		<outline text="James Hill MD" title="James Hill MD" type="rss" xmlUrl="https://hillmd.substack.com/feed" htmlUrl="https://hillmd.substack.com/feed"/>
+		<outline text="21st Century Wire" title="21st Century Wire" type="rss" xmlUrl="https://21stcenturywire.com/feed" htmlUrl="https://21stcenturywire.com/feed"/>
+		<outline text="Waking Times" title="Waking Times" type="rss" xmlUrl="https://www.wakingtimes.com/feed" htmlUrl="https://www.wakingtimes.com/"/>
+		<outline text="Humans are free" title="Humans are free" type="rss" xmlUrl="https://humansarefree.com/feed" htmlUrl="https://humansarefree.com/"/>
+	</outline>
+
+
+</body>
+</opml>

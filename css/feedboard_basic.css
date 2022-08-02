@@ -8,10 +8,10 @@ html
 {
 width:100%;
 height:100%;
-font-size:1.1em;
+font-size:1em;
 font-family:"arial", verdana, geneva;
-color:#A0A0A0;
-background-color: #191919;
+color:#232323;
+background-color: white;
 }
 
 body .fullview
@@ -69,15 +69,13 @@ div#feedboard
 
 #sourcebox
 {
-  position:relative;
-  display:block;
-  width:100%;
+    width:100%;
 }
-#sourcebox input#sourcestring
+input#sourcestring
 {
     width:100%;
-    max-width:540px;
 }
+
 
 div#topbar .option
 {
@@ -110,7 +108,7 @@ display:block;
 
 /* topnav display global */
 
-div#optionbar
+div#optionbar 
 {
 padding:4px;
 }
@@ -159,35 +157,6 @@ clear:both;
 }
 
 
-/* global styles */
-
-input#sourcestring
-{
-  border-radius:12px;
-  padding:6px 6px;
-}
-
-ul#groupmenu li,
-ul#groupchannelbox li,
-#activeselectbox ul li
-{
-  border-radius:12px;
-  padding:6px 10px;
-}
-
-ul li span.delete
-{
-position:absolute;
-right:0px;
-top:0px;
-background-color:#555555;
-color:#dddddd;
-font-size:1.3em;
-padding:5px 10px;
-border-top-right-radius:12px;
-border-bottom-right-radius:12px;
-}
-
 /**/
 div#bottombar
 {
@@ -214,7 +183,7 @@ top:0px;
 height:100%;
 background-color:#555555;
 color:#dddddd;
-padding:0px 2px;
+padding:0px 2px; 
 }
 
 ul#groupchannelbox li
@@ -235,7 +204,7 @@ display:inline;
 ul#groupchannelbox li.active:hover
 {
 background-color: #CCCCCC;
-}
+} 
 
 ul#groupchannelbox li.loading
 {
@@ -244,8 +213,8 @@ background-image: repeating-linear-gradient(145deg, #DFDFDF, #DFDFDF 2px, #FEFEF
 background-position: 0px top;
 }
 @keyframes optionloadingbg {
-    from {background-position: 0px top;}
-    to {background-position: -6px top;}
+    from {background-position: 0px top;}  
+    to {background-position: -6px top;}  
 }
 
 /************************************* ACTIVE MENU ****************************************/
@@ -277,7 +246,7 @@ ul#feedbundle li.bundle-item
 display:block;
 width:100%;
 margin:2px 0px 10px 4px;
-/*border-left:1px solid #454545;*/
+border-left:1px solid #454545;
 }
 
 ul#feedbundle li.bundle-item h4,
@@ -294,12 +263,12 @@ ul#feedbundle li.bundle-item h4 a,
 ul#feedbundle li.bundle-item h4 time
 {
 font-size:0.7em;
-color:#A0A0A0;
+color:#454545;
 font-weight:normal;
 }
 ul#feedbundle li.bundle-item h3 a
 {
-color:#A0A0A0;
+color:#454545;
 font-size:1.1em;
 line-height:1.3em;
 }
@@ -308,7 +277,7 @@ ul#feedbundle li.bundle-item .itemtextbox
 {
 font-size:0.9em;
 line-height:112%;
-}
+} 
 
 .fullview ul#feedbundle li.bundle-item
 {
@@ -319,7 +288,7 @@ ul#feedbundle li.bundle-item img,
 ul#feedbundle li.bundle-item img:nth-child(1)
 {
 display:block;
-max-width:40% !important;
+max-width:40% !important; 
 height:auto;
 float:left;
 margin-right:12px;
@@ -334,7 +303,7 @@ vertical-align:text-top;
 /********************************************** RESPONSIVE ****************************************/
 @media screen and (min-width: 760px) {
 
-
+	
 
 div#contentbar
 {
@@ -347,7 +316,7 @@ float:right;
 width:24%;
 }
 
-
+	
 ul#feedbundle
 {
 }
@@ -359,7 +328,7 @@ width:48%;
 margin:2px 0px 10px 4px;
 vertical-align: text-top;
 }
-
+	
 ul#feedbundle li.bundle-item h4 a,
 ul#feedbundle li.bundle-item h4 time
 {
