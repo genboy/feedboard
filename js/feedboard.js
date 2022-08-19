@@ -11,6 +11,7 @@ var linklibrary = ['https://genboy.net/info/feedboard/data/opinion.opml',
   //'http://webdesigndenhaag.net/project/feedboard/construct.opml',
   //http://webdesigndenhaag.net/lab/wp-links-opml.php'
 ];
+
 // globals
 var archive = []; // feedchannel list to be extended on first selection
 var groups = []; // array with group names
@@ -616,19 +617,6 @@ function displayChannels() {
 
 function displaySettings() {
 
-	/*
-  var dsp = document.createElement('div');
-  dsp.setAttribute('id', 'sourcebox');
-  var inp = document.createElement('input');
-  inp.setAttribute('id', 'sourcesting');
-  inp.setAttribute('name', 'sourcesting');
-  inp.setAttribute('type', 'text');
-  inp.setAttribute('placeholder', 'New RSS feed url');
-  inp.setAttribute('onchange', 'sourceinput(this.value);');
-  dsp.appendChild(inp);
-  document.getElementById("optionbar").appendChild(dsp);
-	*/
-	
   var dsp = document.createElement('span');
   dsp.setAttribute('id', 'selectboxfeedmax');
   dsp.setAttribute('class', 'option');
@@ -668,7 +656,9 @@ function displaySettings() {
 
   dsp.appendChild(document.createTextNode(' minimize'));
   document.getElementById("optionbar").appendChild(dsp);
+
 }
+
 
 function setActiveOptions() {
   if (channels.length > 0) {
@@ -768,6 +758,21 @@ function toggleChannelGroup(group) {
 }
 
 
+
+function newUrlForm(){
+
+  var dsp = document.createElement('div');
+  dsp.setAttribute('id', 'sourcebox');
+  var inp = document.createElement('input');
+  inp.setAttribute('id', 'sourcestring');
+  inp.setAttribute('name', 'sourcestring');
+  inp.setAttribute('type', 'text');
+  inp.setAttribute('placeholder', 'New RSS feed url');
+  inp.setAttribute('onchange', 'sourceinput(this.value);');
+  dsp.appendChild(inp);
+  document.getElementById("optionbar").appendChild(dsp);
+
+}
 
 
 function sourceinput(str) {
@@ -921,7 +926,6 @@ function cleanHtmlText(trunc, l) {
 
   var textlength = 140;
   if (l) textlength = l;
-
   trunc = strip_html_tags(trunc); // cleanup html tags
 
   if (trunc.length > textlength) {
@@ -933,7 +937,9 @@ function cleanHtmlText(trunc, l) {
 }
 
 function strip_html_tags(str) {
-  if ((str === null) || (str === '')) //str == false ||
+  if( str === undefined )
+    return false;
+  else if ((str === null) || (str === '')) //str == false ||
     return false;
   else
     str = str.toString();

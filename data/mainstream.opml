@@ -23,7 +23,6 @@
 				<outline text="NOS Journaal" title="NOS Journaal" type="rss" xmlUrl="http://feeds.nos.nl/nosjournaal" htmlUrl="https://www.nos.nl/nosjournaal"/>
 				<outline text="Trouw dagblad" title="Trouw dagblad" type="rss" xmlUrl="https://www.trouw.nl/voorpagina/rss.xml" htmlUrl="https://www.trouw.nl"/>
 				<outline text="NRC dagblad" title="NRC dagblad" type="rss" xmlUrl="https://www.nrc.nl/rss/" htmlUrl="https://www.nrc.nl"/>
-				<outline text="Bits of Freedom" title="Bits of Freedom" type="rss" xmlUrl="https://www.bitsoffreedom.nl/feed" htmlUrl="https://www.bitsoffreedom.nl"/>
 			</outline>
 
 			    <outline type="category" title="Popular" text="Popular EN">

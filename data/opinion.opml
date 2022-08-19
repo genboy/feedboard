@@ -7,19 +7,32 @@
 	</head>
 
 	<body>
+<outline type="category" title="Free Press NL" text="Free Press NL">
+	<outline text="Commonsense TV" title="Commonsense TV" type="rss" xmlUrl="https://commonsensetv.nl/feed" htmlUrl="https://commonsensetv.nl"/>
+	<outline text="Stichting JAS" title="stichting-jas" type="rss" xmlUrl="https://www.stichting-jas.nl/feeds/posts/default?alt=rss" htmlUrl="https://www.stichting-jas.nl/"/>
+	<outline text="De lange Mars" title="De lange Mars plus nieuws" type="rss" xmlUrl="https://www.dlmplus.nl/feed/" htmlUrl="http://www.dlmplus.nl"/>
+	<outline text="Nine for News" title="NineForNews nieuws" type="rss" xmlUrl="https://www.ninefornews.nl/feed" htmlUrl="https://www.ninefornews.nl"/>
+	</outline>
 
+	<outline type="category" title="Alternative NL" text="Alternatief NL">
 
-	<outline type="category" title="Opinion" text="Opinion NL">
-		<outline text="Het Andere Nieuws" title="Het Andere Nieuws" type="rss" xmlUrl="https://hetanderenieuws.nl/feed" htmlUrl="https://hetanderenieuws.nl/"/>
-		<outline text="Gezondverstand" title="Gezondverstand" type="rss" xmlUrl="https://gezondverstand.eu/feed" htmlUrl="https://gezondverstand.eu/feed"/>
-		<outline text="Commonsense TV" title="Commonsense TV" type="rss" xmlUrl="https://commonsensetv.nl/feed" htmlUrl="https://commonsensetv.nl"/>
-		<outline text="Cafe Weltschmerz" title="Cafe Weltschmerz" type="rss" xmlUrl="https://cafeweltschmerz.nl/feed" htmlUrl="https://cafeweltschmerz.nl/feed"/>
-		<outline text="Earth Matters" title="Earth Matters columns" type="rss" xmlUrl="https://www.earth-matters.nl/rss/0/algemeen.rss" htmlUrl="http://www.earth-matters.nl"/>
+	<outline text="Earth Matters" title="Earth Matters columns" type="rss" xmlUrl="https://www.earth-matters.nl/rss/0/algemeen.rss" htmlUrl="http://www.earth-matters.nl"/>
+		<outline text="Herstel de Republiek" title="De Binnenlandsche Bataafsche Courant" type="rss" xmlUrl="https://herstelderepubliek.wordpress.com/feed" htmlUrl="https://herstelderepubliek.wordpress.com"/>
 		<outline text="Want to know" title="Want to Know nieuws" type="rss" xmlUrl="https://www.wanttoknow.nl/feed" htmlUrl="http://www.wanttoknow.nl"/>
-    <outline text="De lange Mars" title="De lange Mars plus nieuws" type="rss" xmlUrl="https://www.dlmplus.nl/feed/" htmlUrl="http://www.dlmplus.nl"/>
+	<outline text="Apokalypsnu" title="Apokalypsnu" type="rss" xmlUrl="https://apokalypsnu.nl/feed" htmlUrl="https://apokalypsnu.nl"/>
+
 </outline>
 
-	<outline type="category" title="Opinion" text="Opinion EN">
+<outline type="category" title="Opinion NL" text="Opinion NL">	<outline text="Cafe Weltschmerz" title="Cafe Weltschmerz" type="rss" xmlUrl="https://cafeweltschmerz.nl/feed" htmlUrl="https://cafeweltschmerz.nl/feed"/>
+
+<outline text="De Gulden Middenweg" title="De Gulden Middenweg" type="rss" xmlUrl="https://deguldenmiddenweg.eu/feed" htmlUrl="https://deguldenmiddenweg.eu/"/>
+<outline text="Het Andere Nieuws" title="Het Andere Nieuws" type="rss" xmlUrl="https://hetanderenieuws.nl/feed" htmlUrl="https://hetanderenieuws.nl/"/>
+	<outline text="Bits of Freedom" title="Bits of Freedom" type="rss" xmlUrl="https://www.bitsoffreedom.nl/feed" htmlUrl="https://www.bitsoffreedom.nl"/>
+	<outline text="Gezondverstand" title="Gezondverstand" type="rss" xmlUrl="https://gezondverstand.eu/feed" htmlUrl="https://gezondverstand.eu/feed"/>
+
+</outline>
+
+	<outline type="category" title="Opinion EN" text="Opinion EN">
 		<outline text="Corbett report" title="Corbett report" type="rss" xmlUrl="https://corbettreport.com/feed" htmlUrl="https://corbettreport.com/"/>
 		<outline text="James Hill MD" title="James Hill MD" type="rss" xmlUrl="https://hillmd.substack.com/feed" htmlUrl="https://hillmd.substack.com/feed"/>
 		<outline text="21st Century Wire" title="21st Century Wire" type="rss" xmlUrl="https://21stcenturywire.com/feed" htmlUrl="https://21stcenturywire.com/feed"/>

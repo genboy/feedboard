@@ -293,20 +293,20 @@ line-height:0.8em;
 ul#feedbundle li.bundle-item h4 a,
 ul#feedbundle li.bundle-item h4 time
 {
-font-size:0.7em;
+font-size:0.6em;
 color:#A0A0A0;
 font-weight:normal;
 }
 ul#feedbundle li.bundle-item h3 a
 {
 color:#A0A0A0;
-font-size:1.1em;
+font-size:0.9em;
 line-height:1.3em;
 }
 
 ul#feedbundle li.bundle-item .itemtextbox
 {
-font-size:0.9em;
+font-size:0.8em;
 line-height:112%;
 }
 

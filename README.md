@@ -33,10 +33,13 @@ Version 0.5
 
 Version 0.6
 - date/time from now format
+- fix some problems (errors) loading rss
+- now alert if rss not available
+- clean up a bit
 
 
-TO DO
-Wishlist
+Developments in progress
+
 - desktop and mobile styling
 - display bundle by group (bundle)
 - !? filter image from description
