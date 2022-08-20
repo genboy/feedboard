@@ -20,33 +20,45 @@
 
 <div id="maincontainer">
 
-	<div id="topbar">
-		Feedboard
-		<button onclick="setColorScheme('light')">Light</button>
-    <button onclick="setColorScheme('dark')">Dark</button>
+	<div id="topcontainer">
+		<div class="outermargin">
+			Feedboard
+			<div id="themetoggle" onclick="toggleDarkLightTheme();">
+				<div class="slider"><div class="nob"></div></div>
+			</div>
+			<!--
+			<button onclick="setColorScheme('light')">Light</button>
+	    <button onclick="setColorScheme('dark')">Dark</button>
+			-->
+		</div>
+	</div>
+	<div id="contentcontainer">
+		<div class="outermargin">
+
+			<div id="feedboard">
+			<div id="topbar">
+			<div id="optionbar"></div>
+			<div id="navbar"></div>
+			</div>
+			<div id="sidebar"></div>
+			<div id="contentbar"></div>
+			<div class="clr"></div>
+			<div id="bottombar"></div>
+			</div>
+
+		</div>
+
 	</div>
 
-	<div id="feedboard">
-
-	<div id="topbar">
-	<div id="optionbar"></div>
-	<div id="navbar"></div>
-
+	<div id="bottomcontainer">
+		<div class="outermargin">
+			Feedboard
+		</div>
 	</div>
-
-	<div id="sidebar"></div>
-
-	<div id="contentbar"></div>
-
-	<div class="clr"></div>
-
-	<div id="bottombar"></div>
-
-	</div>
-
-	<div id="loaderbox">Loading..</div>
-
 </div>
+
+<div id="loaderbox" class="loading">Loading..</div>
+
 <script type="text/javascript" language="javascript">
 </script>
 </body>

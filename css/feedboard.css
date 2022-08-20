@@ -31,3 +31,58 @@ font-weight:500;
 color:var(--text-color);
 background-color: var(--bg-color);
 }
+
+
+#loaderbox
+{
+  display:none;
+}
+
+#loaderbox.loading
+{
+  display:block;
+}
+
+
+#themetoggle
+{
+  float:right;
+  width:38px;
+  height:20px;
+  border-radius:10px;
+}
+
+#themetoggle .slider
+{
+  width:38px;
+  height:20px;
+  border-radius:10px;
+}
+
+
+#themetoggle .slider .nob
+{
+  width:22px;
+  height:20px;
+  border-radius:30px;
+  background-color: #white;
+  transition: all 0.5s ease-out;
+}
+
+[data-theme="theme-light"] #themetoggle .slider,
+[data-theme="theme-dark"] #themetoggle .nob
+{
+  background-color: black;
+  color: white;
+}
+[data-theme="theme-dark"] #themetoggle .nob
+{
+  margin-left: calc( 100% - 22px);
+}
+
+[data-theme="theme-dark"] #themetoggle .slider,
+[data-theme="theme-light"] #themetoggle .nob
+{
+  background-color: white;
+    color: black;
+}

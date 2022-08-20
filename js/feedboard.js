@@ -31,6 +31,7 @@ onload = function() {
 
   loadOPMLlibrary(linklibrary);
 
+  document.getElementById("loaderbox").className = document.getElementById("loaderbox").className.replace(/(?:^|\s)loading(?!\S)/g, '');
 
 }
 
