@@ -68,6 +68,7 @@ function fixedSupport() { // http://kangax.github.com/cft/#IS_POSITION_FIXED_SUP
 }
 // start stop scroll events: http://james.padolsey.com/demos/scrollevents/
 
+
 // DOC DETECT RESULT INFO
 function dsplDocinfo(){
 	var docinfo = '<h3>Document Handling Info</h3>';
