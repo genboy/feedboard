@@ -8,7 +8,7 @@
 
 	<body>
 
- 	<outline type="category" title="Mainstream" text="Mainstream EN">
+ 	<outline type="category" title="Mainstream World" text="Mainstream World">
 		<outline text="BBC News World Edition" title="BBC World" type="rss" xmlUrl="http://newsrss.bbc.co.uk/rss/newsonline_world_edition/front_page/rss.xml" htmlUrl="http://news.bbc.co.uk/go/rss/-/2/hi/default.stm"/>
     	<outline text="Google News" title="Google News" type="rss" xmlUrl="http://news.google.com/?output=rss" htmlUrl="http://news.google.com/"/>
 		<outline text="Wired Top Stories" title="Wired Top Stories" type="link" xmlUrl="http://www.wired.com/news/feeds/rss2/0,2610,,00.xml" htmlUrl="http://www.wired.com"/>
@@ -18,14 +18,14 @@
 
     </outline>
 
-			<outline type="category" title="Mainstream" text="Mainstream NL">
+			<outline type="category" title="Mainstream NL" text="Mainstream NL">
 				<outline text="Nu.nl" title="Nu.nl" type="rss" xmlUrl="https://www.nu.nl/rss" htmlUrl="https://www.nu.nl"/>
 				<outline text="NOS Journaal" title="NOS Journaal" type="rss" xmlUrl="http://feeds.nos.nl/nosjournaal" htmlUrl="https://www.nos.nl/nosjournaal"/>
 				<outline text="Trouw dagblad" title="Trouw dagblad" type="rss" xmlUrl="https://www.trouw.nl/voorpagina/rss.xml" htmlUrl="https://www.trouw.nl"/>
 				<outline text="NRC dagblad" title="NRC dagblad" type="rss" xmlUrl="https://www.nrc.nl/rss/" htmlUrl="https://www.nrc.nl"/>
 			</outline>
 
-			    <outline type="category" title="Popular" text="Popular EN">
+			 <outline type="category" title="Popular" text="Popular EN">
 					<outline text="Boingboing" type="link" xmlUrl="http://feeds.feedburner.com/boingboing/ibag" htmlUrl="http://www.boingboing.com" updated="" />
 					<outline text="Mashable" type="link" xmlUrl="http://feeds.feedburner.com/Mashable" htmlUrl="http://www.mashable.com" updated="" />
 			        <outline text="Makeuseof" title="Makeuseof" type="rss" xmlUrl="http://feeds.feedburner.com/Makeuseof" htmlUrl="https://www.makeuseof.com/"/>

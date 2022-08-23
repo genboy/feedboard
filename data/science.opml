@@ -9,7 +9,10 @@
 	<body>
 
 
-<outline type="category" title="Science" text="Science EN"> 
+<outline type="category" title="Science" text="Science EN">
+
+	<outline text="Doctors 4 covid ethics" title="Doctors 4 covid ethics" type="rss" xmlUrl="https://doctors4covidethics.org/feed" htmlUrl="https://doctors4covidethics.org/"/>
+
 		<outline text="Scientific American" title="Scientific American" type="rss" xmlUrl="http://rss.sciam.com/ScientificAmerican-Global" htmlUrl="https://www.scientificamerican.com/"/>
 </outline>
 

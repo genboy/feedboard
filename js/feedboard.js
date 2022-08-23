@@ -618,7 +618,7 @@ function displayChannels() {
 
 function displaySettings() {
 
-  var dsp = document.createElement('span');
+  var dsp = document.createElement('label');
   dsp.setAttribute('id', 'selectboxfeedmax');
   dsp.setAttribute('class', 'option');
   var box = document.createElement('select');
@@ -641,7 +641,7 @@ function displaySettings() {
   box.appendChild(opt4);
   box.appendChild(opt5);
   dsp.appendChild(box);
-  dsp.appendChild(document.createTextNode(' items/channel'));
+  //dsp.appendChild(document.createTextNode(''));
   document.getElementById("optionbar").appendChild(dsp);
 
   var dsp = document.createElement('label');
